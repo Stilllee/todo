@@ -1,9 +1,11 @@
 :root {
-  --color-bg-dark: #282c34;
-  --color-bg: #ffffff;
-  --color-main-dark: #21252b;
-  --color-main: #f8f8f8;
-  --color-accent: #4d78cc;
+  --color-bg-dark: #0d0d0d;
+  --color-bg: #f9f9f9;
+  --color-main-dark: #171717;
+  --color-main: #ffffff;
+  --color-grey-dark: #3e3e40;
+  --color-grey: #cccccc;
+  --color-accent: #f16e03;
 }
 
 body {
@@ -26,6 +28,7 @@ body {
   height: 60%;
   max-width: 500px;
   background-color: var(--color-main);
+  overflow: hidden;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -41,4 +44,9 @@ code {
 ul {
   list-style: none;
   padding-left: 0;
+}
+
+button {
+  outline: none;
+  border: none;
 }
