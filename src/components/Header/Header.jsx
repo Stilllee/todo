@@ -1,12 +1,23 @@
 import React from "react";
+import styles from "./Header.module.css";
 
 export default function Header({ filters, filter, onFilterChange }) {
+  const filterTranslations = {
+    all: "전체",
+    active: "진행 중",
+    completed: "완료",
+  };
   return (
-    <header>
-      <ul>
+    <header className={styles.header}>
+      <ul className={styles.filters}>
         {filters.map((value, index) => (
           <li key={index}>
-            <button onClick={() => onFilterChange(value)}>{value}</button>
+            <button
+              className={styles.filter}
+              onClick={() => onFilterChange(value)}
+            >
+              {filterTranslations[value]}
+            </button>
           </li>
         ))}
       </ul>
