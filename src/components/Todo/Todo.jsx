@@ -1,5 +1,6 @@
 import React from "react";
 import { MdDeleteForever } from "react-icons/md";
+import styles from "./Todo.module.css";
 
 export default function Todo({ todo, onUpdate, onDelete }) {
   const { text, status } = todo;
@@ -9,17 +10,22 @@ export default function Todo({ todo, onUpdate, onDelete }) {
   };
   const handleDelete = () => onDelete(todo);
   return (
-    <li>
+    <li className={styles.todo}>
       <input
+        className={styles.checkbox}
         type="checkbox"
         id="checkbox"
         checked={status === "completed"}
         onChange={handleChange}
       />
-      <label htmlFor="checkbox">{text}</label>
-      <button onClick={handleDelete}>
-        <MdDeleteForever />
-      </button>
+      <label className={styles.text} htmlFor="checkbox">
+        {text}
+      </label>
+      <span className={styles.icon}>
+        <button className={styles.button} onClick={handleDelete}>
+          <MdDeleteForever />
+        </button>
+      </span>
     </li>
   );
 }
