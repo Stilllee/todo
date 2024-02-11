@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "./Header.module.css";
+import { useDarkMode } from "../../context/DarkModeContext";
+import { HiMoon, HiSun } from "react-icons/hi2";
 
 export default function Header({ filters, filter, onFilterChange }) {
   const filterTranslations = {
@@ -7,8 +9,12 @@ export default function Header({ filters, filter, onFilterChange }) {
     active: "진행 중",
     completed: "완료",
   };
+  const { darkMode, toggleDarkMode } = useDarkMode();
   return (
     <header className={styles.header}>
+      <button onClick={toggleDarkMode}>
+        {darkMode ? <HiSun /> : <HiMoon />}
+      </button>
       <ul className={styles.filters}>
         {filters.map((value, index) => (
           <li key={index}>
