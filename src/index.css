@@ -1,13 +1,22 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 
 :root {
-  --color-bg-dark: #0d0d0d;
-  --color-bg: #f9f9f9;
-  --color-main-dark: #171717;
-  --color-main: #ffffff;
-  --color-grey-dark: #3e3e40;
-  --color-grey: #cccccc;
   --color-accent: #f16e03;
+  --color-bg: #f9f9f9;
+  --color-main: #ffffff;
+  --color-text: #171717;
+  --color-line: #cccccc;
+  --color-grey-sub: #3e3e40;
+  --color-grey-main: #cccccc;
+}
+
+html.dark {
+  --color-bg: #282c34;
+  --color-main: #21252b;
+  --color-text: #d7dae0;
+  --color-line: #323842;
+  --color-grey-main: #6e7179;
+  --color-grey-sub: #b6b7c4;
 }
 
 body {

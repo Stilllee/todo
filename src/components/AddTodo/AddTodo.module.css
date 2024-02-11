@@ -2,7 +2,8 @@
   width: 100%;
   display: flex;
   padding: 1.4rem 1rem;
-  background-color: var(--color-bg);
+  background-color: var(--color-main);
+  border-top: 1px solid var(--color-line);
 }
 
 .input {
@@ -11,8 +12,11 @@
   padding: 0.7rem 1rem;
   border: none;
   outline: none;
+  border: 1px solid var(--color-line);
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
+  background: transparent;
+  color: var(--color-text);
 }
 
 .button {
@@ -23,6 +27,7 @@
   padding: 0 2rem;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
+  color: white;
 }
 
 .button:hover {

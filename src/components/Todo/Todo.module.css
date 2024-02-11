@@ -4,7 +4,7 @@
   align-items: center;
   padding: 0.5rem 1rem;
   margin: 0.1rem 0;
-  color: var(--color-main-dark);
+  color: var(--color-text);
 }
 
 .checkbox {
@@ -36,5 +36,5 @@
 
 .button {
   font-size: 1.5rem;
-  color: var(--color-main-dark);
+  color: var(--color-text);
 }

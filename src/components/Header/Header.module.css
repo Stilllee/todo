@@ -2,8 +2,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--color-bg);
-  border-bottom: 1px solid var(--color-grey);
+  background-color: var(--color-main);
+  border-bottom: 1px solid var(--color-line);
 }
 
 .filters {
@@ -28,5 +28,5 @@
   content: "";
   display: block;
   margin-top: 0.2rem;
-  border: 1px solid var(--color-grey-dark);
+  border: 1px solid var(--color-grey-sub);
 }
