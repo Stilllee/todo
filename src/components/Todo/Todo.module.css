@@ -44,7 +44,3 @@
   font-size: 1.5rem;
   color: var(--color-text);
 }
-
-.button:focus {
-  outline: auto;
-}

@@ -7,12 +7,6 @@
   padding: 0.5rem;
 }
 
-.toggle:focus,
-.filter:focus {
-  outline: auto;
-  outline-color: var(--color-text);
-}
-
 .toggle {
   color: var(--color-text);
   font-size: 1.5rem;
