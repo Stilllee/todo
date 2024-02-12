@@ -8,6 +8,12 @@ export default function Todo({ todo, onUpdate, onDelete }) {
     const status = e.target.checked ? "completed" : "active";
     onUpdate({ ...todo, status });
   };
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      const newStatus = status === "completed" ? "active" : "completed";
+      onUpdate({ ...todo, status: newStatus });
+    }
+  };
   const handleDelete = () => onDelete(todo);
   return (
     <li className={styles.todo}>
@@ -17,6 +23,7 @@ export default function Todo({ todo, onUpdate, onDelete }) {
         id={id}
         checked={status === "completed"}
         onChange={handleChange}
+        onKeyDown={handleKeyDown}
       />
       <label
         className={`${styles.text} ${
