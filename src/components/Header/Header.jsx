@@ -12,7 +12,11 @@ export default function Header({ filters, filter, onFilterChange }) {
   const { darkMode, toggleDarkMode } = useDarkMode();
   return (
     <header className={styles.header}>
-      <button className={styles.toggle} onClick={toggleDarkMode}>
+      <button
+        className={styles.toggle}
+        onClick={toggleDarkMode}
+        aria-label="다크 모드 전환"
+      >
         {darkMode ? <HiSun /> : <HiMoon />}
       </button>
       <ul className={styles.filters}>
