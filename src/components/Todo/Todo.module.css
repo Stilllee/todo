@@ -10,12 +10,18 @@
 .checkbox {
   width: 1.5rem;
   height: 1.5rem;
+  cursor: pointer;
 }
 
 .text {
   flex: 1 1 0%;
   margin-left: 0.5rem;
   font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.text.completed {
+  opacity: 0.4;
 }
 
 .icon {
@@ -37,4 +43,8 @@
 .button {
   font-size: 1.5rem;
   color: var(--color-text);
+}
+
+.button:focus {
+  outline: auto;
 }
