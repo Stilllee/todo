@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# To Do
+![image](https://github.com/Stilllee/todo/assets/108785772/64c25713-088b-4dbe-9e7b-8919cf4f25b3)
+<br>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[To Do](https://wood-todo.netlify.app/) 앱은 사용자가 일상적인 할 일을 관리할 수 있는 간단하고 직관적인 웹 애플리케이션입니다. 
 
-## Available Scripts
+<br>
 
-In the project directory, you can run:
+## 목차
+- [기술 스택](#기술-스택)
+- [주요 기능](#주요-기능)
+<br>
 
-### `npm start`
+## 기술 스택
+- **React**: UI 구축을 위한 주요 라이브러리
+- **Create React App**: 프로젝트 초기 설정을 위한 환경
+- **CSS Modules**: 컴포넌트 별로 CSS를 모듈화하여 스타일을 적용
+- **uuid**: 할 일 항목에 대한 고유 식별자 생성
+- **react-icons**: UI에 아이콘을 추가하여 시각적 매력 향상
+- **LocalStorage**: 사용자의 다크 모드 설정과 할 일 목록 저장
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<br>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 주요 기능
+### 1. 할 일 추가
+![할 일 추가](https://github.com/Stilllee/todo/assets/108785772/57132fe1-c2a4-42bb-900d-889ffda2566d)
+- 사용자는 새로운 할 일을 입력하고 추가할 수 있습니다.
+- `AddTodo` 컴포넌트는 사용자로부터 입력을 받아 새 할 일을 추가합니다.
+- 입력 필드에 텍스트를 입력하고 '추가' 버튼을 누르면, `handleSubmit` 함수가 호출되어 새로운 할 일 객체를 생성합니다.
+- 각 할 일에는 `uuidv4` 함수를 사용하여 고유한 ID가 부여되며, 초기 상태는 "active"로 설정됩니다.
+- 할 일 객체는 `onAdd` 함수를 통해 상위 `TodoList` 컴포넌트의 상태에 추가되고, 로컬 스토리지에도 저장됩니다.
 
-### `npm test`
+<br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 2. 할 일 삭제
+![할 일 삭제](https://github.com/Stilllee/todo/assets/108785772/e1b4a4a2-e01f-48da-9cf5-63c1b35b4411)
+#### 사용자는 더 이상 필요하지 않은 할 일을 목록에서 삭제할 수 있습니다.
+- 각 할 일에 있는 삭제버튼을 클릭하면 `handleDelete` 함수가 호출되며, 해당 함수는 `onDelete`를 통해 `TodoList` 컴포넌트의 `todos` 상태에서 해당 항목을 제거합니다.
+- 상태 변경 후, 새로운 `todos` 배열이 로컬 스토리지에 저장되어 영구적으로 반영됩니다.
 
-### `npm run build`
+<br>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 3. 할 일 상태 전환
+![할 일 상태 전환](https://github.com/Stilllee/todo/assets/108785772/21ca812c-c937-4cc9-8c8a-bdccf0740812)
+#### 사용자는 할 일을 '진행 중'과 '완료됨' 상태 사이에서 전환할 수 있습니다.
+- 할 일의 완료 여부는 체크박스를 통해 관리됩니다.
+- 체크박스의 상태 변경(`onChange`) 이벤트는 `handleChange` 함수를 트리거하여 할 일의 상태를 'active' 또는 'completed'로 전환합니다.
+- 이벤트 핸들러는 업데이트된 할 일 객체를 `onUpdate` 함수로 전달하여 `TodoList` 컴포넌트의 상태를 업데이트하고, 결과를 로컬 스토리지에 저장합니다.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 4. 다크 모드 전환
+![다크 모드 전환](https://github.com/Stilllee/todo/assets/108785772/347d7341-fa38-4d6a-a757-b3440e746acd)
+#### 사용자는 더 편안한 시각 경험을 위해 다크 모드와 라이트 모드를 전환할 수 있습니다.
+- `Header` 컴포넌트는 다크 모드 토글 버튼을 포함하고 있습니다.
+- 사용자가 버튼을 클릭하면 `toggleDarkMode` 함수가 호출되어 앱의 다크 모드 상태를 토글합니다.
+- 이 상태는 `DarkModeContext`를 통해 애플리케이션 전역으로 공유되며, 로컬 스토리지에 저장되어 사용자가 다음에 앱을 방문했을 때 선호하는 모드를 유지합니다.
